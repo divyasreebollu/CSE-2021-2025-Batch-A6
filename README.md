@@ -2,7 +2,7 @@
 
 Team Members:
 
-   S.No Roll No.     Name
+    S.No Roll No.     Name
 
     1. 214G1A0522 - B. Divya Sree   
     
