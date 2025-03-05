@@ -1,0 +1,74 @@
+.point {
+    display: flex;
+    margin-top: 10px;
+    background-color: #ff956774;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.point input {
+    outline: none;
+    padding: 10px;
+    background-color: transparent;
+    border-style: none;
+}
+
+button {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #e54b20;
+    border-style: none;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+body {
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-family: 'Avenir Next', arial;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.item {
+    z-index: 1;
+    display: flex;
+    background: #000;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    opacity: 0;
+    right: 100%;
+    animation: make 1500ms forwards;
+
+}
+
+@keyframes make {
+    100% {
+        display: none;
+        right: 100%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+        right: 0px;
+    }
+
+    0% {
+        opacity: 0;
+        right: 0px;
+    }
+}
+
+.item2 {
+    display: none;
+}
