@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assign</title>
+    </head>
+
+    <body>
+        <style>
+            button {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-radius: 10px;
+                outline: none;
+                background-color: #e54b20;
+                border-style: none;
+                font-weight: bold;
+                color: white;
+                font-size: 12px;
+            }
+
+            .loader {
+                width: fit-content;
+                font-size: 40px;
+                line-height: 1.5;
+                font-family: system-ui, sans-serif;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 10px;
+                color: #0000;
+                -webkit-text-stroke: 1px #000;
+                background:
+                    radial-gradient(1.13em at 50% 1.6em, #000 99%, #0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+                    radial-gradient(1.13em at 50% -0.8em, #0000 99%, #000 101%) 50% .8em/3.2em 100% repeat-x text;
+                animation: l9 2s linear infinite;
+            }
+
+            @keyframes l9 {
+                to {
+                    background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) .8em
+                }
+            }
+
+            .loader:before {
+                content: "Loading";
+            }
+
+            input {
+                padding: 20px;
+                outline: none;
+                width: 300px;
+
+                background-color: #000000;
+                border-radius: 5px;
+                border-style: none;
+                margin-top: 10px;
+                font-size: large;
+                color: white;
+            }
+
+            .item {
+                z-index: 10000;
+                display: flex;
+                background: #000;
+                color: white;
+                padding: 10px;
+                position: fixed;
+                top: 10px;
+                opacity: 0;
+                right: 100%;
+                animation: make 1500ms forwards;
+            }
+
+            @keyframes make {
+                100% {
+                    display: none;
+                    right: 100%;
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 0.8;
+                    right: 0px;
+                }
+
+                0% {
+                    opacity: 0;
+                    right: 0px;
+                }
+            }
+
+            .item2 {
+                display: none;
+            }
+
+            input[type="number"]:-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                width: 0px;
+                display: none;
+            }
+
+            .dialognone {
+                display: none;
+            }
+
+            .slightGood {
+                display: flex;
+                z-index: 54556;
+                pointer-events: none;
+                user-select: none;
+                -webkit-user-drag: none;
+                -moz-user-select: none;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                -ms-user-select: none;
+                background-color: transparent;
+                position: fixed;
+            }
+        </style>
+        <div class="dialognone" id="loaderPoint" style="margin-top: 20%;">
+            <div style="background-color: white;height: fit-content;border-radius: 20px;margin-top: 0px;">
+
+                <div class="loader">
+                </div>
+            </div>
+        </div>
+
+        <div style="
+        margin-top: 5%;
+        border-radius: 50px;
+        box-shadow: 5px 5px 5px 5px #0000008e;
+        width: fit-content;
+        padding: 5px;
+        margin-left: 10%;
+      ">
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="window.history.back()"
+                xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="50px" width="50px" version="1.1"
+                id="Capa_1" viewBox="0 0 219.151 219.151" xml:space="preserve">
+                <g>
+                    <path
+                        d="M109.576,219.151c60.419,0,109.573-49.156,109.573-109.576C219.149,49.156,169.995,0,109.576,0S0.002,49.156,0.002,109.575   C0.002,169.995,49.157,219.151,109.576,219.151z M109.576,15c52.148,0,94.573,42.426,94.574,94.575   c0,52.149-42.425,94.575-94.574,94.576c-52.148-0.001-94.573-42.427-94.573-94.577C15.003,57.427,57.428,15,109.576,15z" />
+                    <path
+                        d="M94.861,156.507c2.929,2.928,7.678,2.927,10.606,0c2.93-2.93,2.93-7.678-0.001-10.608l-28.82-28.819l83.457-0.008   c4.142-0.001,7.499-3.358,7.499-7.502c-0.001-4.142-3.358-7.498-7.5-7.498l-83.46,0.008l28.827-28.825   c2.929-2.929,2.929-7.679,0-10.607c-1.465-1.464-3.384-2.197-5.304-2.197c-1.919,0-3.838,0.733-5.303,2.196l-41.629,41.628   c-1.407,1.406-2.197,3.313-2.197,5.303c0.001,1.99,0.791,3.896,2.198,5.305L94.861,156.507z" />
+                </g>
+            </svg>
+        </div>
+        <div style="display: flex; justify-content: center">
+            <div style="
+          border-radius: 50px;
+          box-shadow: 5px 5px 5px 5px #0000008e;
+          padding: 30px;
+        ">
+                <b style="font-size: 25px">User details :</b>
+                <div id="contentView"></div>
+            </div>
+        </div>
+
+        <div id="item" class="item2"></div>
+
+    </body>
+
+
+<script>
+
+        var name = ""
+        var id = ""
+        var mail = ""
+        window.onload = () => {
+            const url = new URLSearchParams(window.location.search);
+            name = url.get("name");
+            id = url.get("id");
+            mail = url.get("mail");
+            const contentView = document.getElementById("contentView");
+            contentView.innerHTML = `<p><b>Name : </b>${name}</p><p><b>Mail : </b>${mail}</p> <br>`;
+            fetch(
+                "https://wizzie.online/BusTracking/functions.php?condition=getBusDetailsOfWorhteth"
+            )
+                .then((content) => content.json())
+                .then((bodyView) => {
+                    var text = "";
+                    if (bodyView.data.length != 0) {
+                        text = `<label for="bus-select"></label><select id="bus-select"><option value='0'>-- Please select a (Bus Number)--'</option></select>`;
+                        contentView.innerHTML = `${contentView.innerHTML}<b style="font-size:20px;">Bus Details</b> <br>${text}<br><input id='seat' type="text" name="" placeholder="Seat Number" id=""><br>
+                    <div style="display: flex;justify-content: end;margin-top:20px">
+    <button onclick="iamOnMyWay()">Assign</button>
+</div>`;
+                    }
+                    var num = 0;
+                    bodyView.data.forEach((element) => {
+                        const busselect = document.getElementById("bus-select");
+                        num++;
+                        busselect.innerHTML = `${busselect.innerHTML}<option value="${element.id}"> ${num}). ${element.name} (${element.busNumber})</option>`;
+                    });
+                });
+        };
+        function iamOnMyWay() {
+            const option = document.getElementById("bus-select").value;
+            const seat = document.getElementById("seat").value;
+            if (option == "0") {
+                toast("Please select a Bus Details");
+            } else if (seat.length == 0) {
+                toast("Please enter seat details");
+            } else {
+                var time = new Date().getTime()
+                const url = `https://wizzie.online/BusTracking/assignBus.php?busId=${option}&userid=${id}&seatNumber=${seat}&datePoint=${time}`
+                loadProgress()
+
+                fetch(url).then(data => data.json()).then(view => {
+                    if (view.message == "Sucesss") {
+                        toast("Successfully Updated")
+
+                    }
+                    closeProgress()
+                }
+                )
+
+
+            }
+        }
+
+        const item = document.getElementById("item");
+
+        function toast(message) {
+            item.innerText = message;
+            item.className = "item";
+            loadProgress()
+
+            setTimeout(() => {
+                closeProgress()
+                item.className = item.className.replace("item", "item2");
+                if (message == "Successfully Updated") {
+                    window.location.replace('home.html')
+                }
+
+            }, 1500);
+        }
+
+        const loaderPoint = document.getElementById('loaderPoint')
+
+        function loadProgress() {
+            loaderPoint.classList.replace('dialognone', 'slightGood')
+        }
+        function closeProgress() {
+            loaderPoint.classList.replace('slightGood', 'dialognone')
+        }
+    </script>
+
+</html>

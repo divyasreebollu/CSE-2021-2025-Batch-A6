@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet">
+    </head>
+    <link rel="stylesheet" href="css/start.css">
+    <body>
+        <div style="display: flex;justify-content: center;">
+            <div style="padding: 20px;border-radius: 10px;box-shadow: 2px 2px 2px 2px #000;margin-top: 100px;">
+                <img src="images/image.png" alt="" srcset="">
+                <div class="point">
+                    <img src="svg/user.svg" alt="" srcset="">
+
+                    <input type="text" style="width: 90%;" placeholder="Username" name="" id="username">
+                </div>
+                <div class="point">
+                    <img src="svg/lock.svg" alt="" srcset="">
+                    <input type="password" style="width: 90%;" id="password" placeholder="Username" name="" />
+                </div>
+                <div style="display: flex;justify-content: center;margin-top: 60px;">
+                    <button id="login">
+                        Login Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="item" class="item2"></div>
+    </body>
+    <script>
+        document.getElementById('login').addEventListener('click', () => {
+            const name = document.getElementById('username').value
+            const password = document.getElementById('password').value
+            if (name.length == 0) {
+                toast('Please enter your user name')
+            } else if (password.length == 0) {
+                toast('Please enter your password')
+            } else if (name == "admin" && password == "admin") {
+                window.location.replace('home.html')
+            }
+        })
+        const item = document.getElementById('item')
+
+        function toast(message) {
+            item.innerText = message
+            item.className = "item"
+            setTimeout(() => {
+                item.className = item.className.replace('item', 'item2')
+            }, 1500)
+        }
+
+    </script>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Bus Location</title>
+        <style>
+            #map {
+                height: 100vh;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3>Bus Location</h3>
+        <div id="map"></div>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsXwChJiMtdWfz74-XJZjmAJhgcCOm1tE&callback=initMap"
+            async defer></script>
+
+        <script>
+            function initMap() {
+                const url = new URLSearchParams(window.location.search);
+                var latlon = { lat:parseFloat(url.get('lat')) , lng :parseFloat(url.get('lon')) };
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 20,
+                    center: latlon,
+                });
+
+                var marker = new google.maps.Marker({
+                    position: latlon,
+                    map: map,
+                    title: "Here is the location",
+                });
+            }
+            initMap()
+        </script>
+    </body>
+
+</html>
