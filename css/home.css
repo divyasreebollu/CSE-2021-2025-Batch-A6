@@ -1,0 +1,342 @@
+.body {
+    padding: 0%;
+    margin: 0%;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+
+}
+
+.viewPort {
+    background-color: #f1701a;
+    border-radius: 20px;
+    height: 80vh;
+    width: fit-content;
+    color: white;
+    padding: 10px;
+}
+
+.helloIam {
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    height: fit-content;
+    background-color: black;
+}
+
+.insideCard {
+    grid-template-columns: repeat(2,0fr);
+    overflow: scroll;
+    height: 70%;
+    display: grid;
+    overflow: scroll;
+    gap: 20px;
+    width: 600px;
+}
+@media screen {
+    
+}
+
+.insideCard::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+}
+
+.dialog {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    margin: 0px;
+    background-color: #0000001a;
+    height: 100%;
+    border-radius: 20px;
+    animation: animat 1000ms forwards;
+}
+
+@keyframes animat {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.dialognone {
+    display: none;
+}
+
+.addBus {
+    scroll-behavior: smooth;
+    padding: 10px;
+    background-color: #f1701a;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #000;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 10px;
+    color: #fff;
+    transition: 500 ms;
+}
+
+.addBus::-webkit-scrollbar {
+    width: 0px;
+}
+
+.addBus:hover {
+    background-color: white;
+    color: black;
+}
+
+.pathView {
+    fill: white;
+}
+
+
+.addBusDialog {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #0000001a;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardPointerView {
+    margin-top: 15%;
+    height: fit-content;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #fff;
+    animation: 500ms viewAnimation forwards;
+}
+
+input {
+    padding: 20px;
+    outline: none;
+    width: 300px;
+    background-color: #000000;
+    border-radius: 5px;
+    border-style: none;
+    margin-top: 5px;
+    font-size: large;
+    color: white;
+}
+
+input[type='number']:-webkit-outer-spin-button, input[type='number']::-webkit-inner-spin-button {
+    width: 0px;
+    display: none;
+}
+
+@keyframes viewAnimation {
+    0% {
+        height: none;
+        margin-top: 0px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 10%;
+        height: fit-content;
+        opacity: 1;
+    }
+}
+
+.mydiv {
+    margin-top: 2px;
+    height: fit-content;
+    background-color: #ec6c6c;
+    padding: 1px;
+}
+
+button {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    outline: none;
+    background-color: #e54b20;
+    border-style: none;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+.loader {
+    width: fit-content;
+    font-size: 40px;
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    padding: 10px;
+    color: #0000;
+    -webkit-text-stroke: 1px #000;
+    background:
+        radial-gradient(1.13em at 50% 1.6em, #000 99%, #0000 101%) calc(50% - 1.6em) 0/3.2em 100% text,
+        radial-gradient(1.13em at 50% -0.8em, #0000 99%, #000 101%) 50% .8em/3.2em 100% repeat-x text;
+    animation: l9 2s linear infinite;
+
+}
+
+.slightGood {
+    display: flex;
+    z-index: 1000;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    -ms-user-select: none;
+
+    background-color: transparent;
+    position: absolute;
+}
+
+.loader:before {
+    content: "Loading";
+}
+
+@keyframes l9 {
+    to {
+        background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) .8em
+    }
+}
+
+.viewOppsitre {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: fit-content;
+    text-align: start;
+
+}
+
+.viewOppsitre h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.viewOppsitre p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.viewOppsitre span {
+    font-weight: bold;
+    color: #222;
+}
+
+.item {
+    z-index: 1;
+    display: flex;
+    background: #000;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    opacity: 0;
+    right: 100%;
+    animation: make 1500ms forwards;
+}
+
+@keyframes make {
+    100% {
+        display: none;
+        right: 100%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+        right: 0px;
+    }
+
+    0% {
+        opacity: 0;
+        right: 0px;
+    }
+}
+
+.item2 {
+    display: none;
+}
+
+
+.card {
+    border-radius: 10px;
+    background: white;
+    height: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+
+}
+
+
+.date {
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;
+}
+.worldPoint{
+    height: 600px;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+
+.worldPoint::-webkit-scrollbar {
+    gap: 20px;
+    width: 0px;
+}
+#viewVision{
+    margin-left: 20%;
+    background-color: black;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+}
+.viewPoi{
+    background-color: transparent;
+    display: flex;
+    justify-content: end;
+    
+}
+.viewPoi{
+    filter:invert(100%);
+    width: 24px;
+    height: 24px;
+
+}
+
