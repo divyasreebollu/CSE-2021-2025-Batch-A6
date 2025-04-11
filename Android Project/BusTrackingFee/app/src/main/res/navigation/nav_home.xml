@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/startScreen">
+
+    <fragment
+        android:id="@+id/startScreen"
+        android:name="com.feesBus.ui.fragments.StartScreen"
+        android:label="StartScreen"
+        tools:layout="@layout/start_screen">
+        <action
+            android:id="@+id/action_startScreen_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_startScreen_to_userMainActivity"
+            app:destination="@id/userMainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.feesBus.ui.common.Login"
+        android:label="Login"
+        tools:layout="@layout/login_layout">
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signup" />
+        <action
+            android:id="@+id/action_login_to_userMainActivity"
+            app:destination="@id/userMainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.feesBus.ui.common.Signup"
+        android:label="Signup"
+        tools:layout="@layout/signup_layout" />
+    <fragment
+        android:id="@+id/userMainActivity"
+        android:name="com.feesBus.ui.users.UserMainActivity"
+        android:label="UserMainActivity"
+        tools:layout="@layout/user_main_activity">
+        <action
+            android:id="@+id/action_userMainActivity_to_uploads"
+            app:destination="@id/uploads" />
+        <action
+
+            android:id="@+id/action_userMainActivity_to_busDetails"
+            app:destination="@id/busDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploads"
+        android:name="com.feesBus.ui.users.insideFunctions.Uploads"
+        android:label="Uploads"
+        tools:layout="@layout/uploads" />
+    <fragment
+        android:id="@+id/busDetails"
+        android:name="com.feesBus.ui.users.insideFunctions.BusDetails"
+        android:label="BusDetails"
+        tools:layout="@layout/bus_details" />
+</navigation>
