@@ -37,7 +37,7 @@ function loadlocationOfBuses() {
                 text += `
                         <div class="viewOppsitre">
         <h2>Bus Details</h2>
-        <p><span>ID: </span> ${view.id}</p>
+        // <p><span>ID: </span> ${view.id}</p>
         <p><span>Name:</span> ${view.name}</p>
         <p><span>Bus Number:</span> ${view.busNumber}</p>
         <p><span>Seats Available:</span> ${view.seats}</p>

@@ -23,7 +23,7 @@
                 </div>
                 <div class="point">
                     <img src="svg/lock.svg" alt="" srcset="">
-                    <input type="password" style="width: 90%;" id="password" placeholder="Username" name="" />
+                    <input type="password" style="width: 90%;" id="password" placeholder="Password" name="" />
                 </div>
                 <div style="display: flex;justify-content: center;margin-top: 60px;">
                     <button id="login">
@@ -42,8 +42,8 @@
                 toast('Please enter your user name')
             } else if (password.length == 0) {
                 toast('Please enter your password')
-            } else if (name == "admin" && password == "admin") {
-                window.location.replace('home.html')
+            } else if (name == "admin" && password == "Admin@SRIT") {
+                window.location.replace('add.html')
             }
         })
         const item = document.getElementById('item')
